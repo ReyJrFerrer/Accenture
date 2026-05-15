@@ -1,3 +1,5 @@
+package accenture;
+
 public class CalEngine {
 
     public static void main(String[] args) {
@@ -25,5 +27,28 @@ public class CalEngine {
         }
         System.out.println(result);
 
+        switch (opCode){
+            case 'a':
+                result = value1 + value2;
+                break;
+            case 's':
+                result = value1 - value2;
+                break;
+            case 'm':
+                result = value1 * value2;
+                break;
+            case 'd':
+                result = value2 != 0 ? value1 / value2 : 0.0d ;
+                break;
+                default:
+                    System.out.println("Invalid Opcode " + opCode);
+                    result = 0.0d;
+                    break;
+            }
+        System.out.println(result);
+
+
+        }
+
     }
-}
+

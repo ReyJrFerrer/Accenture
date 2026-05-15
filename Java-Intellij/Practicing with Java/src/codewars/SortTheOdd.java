@@ -1,3 +1,8 @@
+package codewars;
+
+import java.util.Collections;
+import java.util.ArrayList;
+
 /**
  * You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
  *
@@ -19,18 +24,21 @@ public class SortTheOdd {
     }
 
     static int[] sortArray(int[] array ){
-        int[] sortedArray = new int[array.length];
-        for (int i = 0 ; i < array.length; i++){
-            for (int j = i + 1 ; j < array.length; j++){
-                if (array[i] % 2 == 1 ){
-                    if (array[i] > array[j]){
-                        sortedArray[i] = array[j];
-                    }
-                }
-                sortedArray[i] = sortedArray[j];
+        ArrayList<Integer> oddsList = new ArrayList<>();
+        for (int num : array){
+            if (num % 2 == 1) {
+                oddsList.add(num);
             }
         }
+        Collections.sort(oddsList);
+        int[] result = array.clone();
+        int oddIndex = 0 ;
+        for (int i = 0 ; i < result.length; i++){
+            if (result[i] % 2 == 1){
+                result[i] = oddsList.get(oddIndex++);
+            }
+        }
+        return result;
 
-        return sortedArray;
     }
 }

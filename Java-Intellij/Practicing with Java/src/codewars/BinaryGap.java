@@ -1,3 +1,5 @@
+package codewars;
+
 public class BinaryGap {
 
     static int[] decimalToBinary(int n) {

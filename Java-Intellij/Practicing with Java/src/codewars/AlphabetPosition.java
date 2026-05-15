@@ -1,4 +1,4 @@
-
+package codewars;
 
 /**
  * A CodeForce Problem
