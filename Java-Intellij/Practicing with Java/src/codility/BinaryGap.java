@@ -1,4 +1,9 @@
-package codewars;
+/**
+ *
+ * A Codility Problem
+ */
+
+package codility;
 
 public class BinaryGap {
 
