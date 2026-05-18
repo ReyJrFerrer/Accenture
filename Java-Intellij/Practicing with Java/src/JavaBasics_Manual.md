@@ -499,7 +499,7 @@ numbers.tailSet(5);              // {5, 8}
 ### Common Imports
 ```java
 import java.util.*;                          // Lists, Maps, Sets
-import java.util.stream.*;                   // Streams (Java 8+)
+import java.util.stream.*;                   // accenture.Streams (Java 8+)
 import java.util.Arrays;
 import java.util.Collections;
 ```
