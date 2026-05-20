@@ -1,4 +1,4 @@
-package accenture.Streams;
+package accenture.iostreams;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -11,16 +11,16 @@ import java.util.List;
 public class I0Demo {
 
     public static void main(String[] args) {
-        readingFilePerCharacter();
+        // readingFilePerCharacter();
 
-        //readingFilePerLine();
+        readingFilePerLine();
     }
     public static void readingFilePerCharacter() {
         FileInputStream fis = null;
         try {
             //https://docs.oracle.com/javase/7/docs/api/java/io/FileInputStream.html
             //example of absolute directory
-            fis = new FileInputStream("C:\\bootcamp_ws\\file_io_demo\\src\\accenture.Streams.files\\StudentInfo.txt");
+            fis = new FileInputStream("src/accenture/Streams/files/StudentInfo.txt");
             System.out.println("using file input stream as bytestream - reading one byte at a time:\n");
             int tempHolder; //placeholder of each character upon reading
             //value of -1 means EOF
@@ -54,9 +54,9 @@ public class I0Demo {
     }
     public static void readingFilePerLine() {
         try {
-            List<Student> students = new ArrayList <>();
+            List<Student> students = new ArrayList<>();
             System.out.println("\nusing buffered reader reading file content per line:\n");
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("src/accenture.Streams.files/StudentInfo.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("src/accenture/Streams/files/StudentInfo.txt"));
             String tempLineHolder;
             int counter = 0;
             while ((tempLineHolder = bufferedReader.readLine()) != null){ //value of null in this case represents EOF
