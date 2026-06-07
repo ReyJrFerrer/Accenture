@@ -1,0 +1,70 @@
+2026-06-04T13:21:43.927+08:00  INFO 1868 --- [java-mock-exam] [main] c.a.j.mock.exam.JavaMockExamApplication  : Starting JavaMockExamApplication v0.0.1-SNAPSHOT using Java 21.0.11 with PID 1868 (/Volumes/DevSSD/Projects/Accenture/Accenture Springboot/java-mock-exam-0.0.1-SNAPSHOT.jar started by reynaldoferrerjr in /Volumes/DevSSD/Projects/Accenture/Accenture Springboot)
+2026-06-04T13:21:43.927+08:00  INFO 1868 --- [java-mock-exam] [main] c.a.j.mock.exam.JavaMockExamApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-06-04T13:21:44.428+08:00  INFO 1868 --- [java-mock-exam] [main] c.a.j.mock.exam.JavaMockExamApplication  : Started JavaMockExamApplication in 0.653 seconds (process running for 0.958)
+2026-06-04T13:21:44.435+08:00 ERROR 1868 --- [java-mock-exam] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.util.NoSuchElementException: No line found
+	at java.base/java.util.Scanner.nextLine(Scanner.java:1660) ~[na:na]
+	at com.accenture.java.mock.exam.controller.ExamController.startExamInterface(ExamController.java:38) ~[!/:0.0.1-SNAPSHOT]
+	at com.accenture.java.mock.exam.JavaMockExamApplication.run(JavaMockExamApplication.java:27) ~[!/:0.0.1-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:788) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:82) ~[spring-core-6.2.8.jar!/:6.2.8]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.2.8.jar!/:6.2.8]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:86) ~[spring-core-6.2.8.jar!/:6.2.8]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:796) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:787) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:772) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:772) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at com.accenture.java.mock.exam.JavaMockExamApplication.main(JavaMockExamApplication.java:16) ~[!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[java-mock-exam-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[java-mock-exam-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[java-mock-exam-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+
+2026-06-04T20:32:21.652+08:00  INFO 4016 --- [java-mock-exam] [main] c.a.j.mock.exam.JavaMockExamApplication  : Starting JavaMockExamApplication v0.0.1-SNAPSHOT using Java 21.0.11 with PID 4016 (/Volumes/DevSSD/Projects/Accenture/Accenture Springboot/java-mock-exam-0.0.1-SNAPSHOT.jar started by reynaldoferrerjr in /Volumes/DevSSD/Projects/Accenture/Accenture Springboot)
+2026-06-04T20:32:21.654+08:00  INFO 4016 --- [java-mock-exam] [main] c.a.j.mock.exam.JavaMockExamApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-06-04T20:32:22.235+08:00  INFO 4016 --- [java-mock-exam] [main] c.a.j.mock.exam.JavaMockExamApplication  : Started JavaMockExamApplication in 0.767 seconds (process running for 1.1)
+2026-06-04T20:32:22.243+08:00 ERROR 4016 --- [java-mock-exam] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.util.NoSuchElementException: No line found
+	at java.base/java.util.Scanner.nextLine(Scanner.java:1660) ~[na:na]
+	at com.accenture.java.mock.exam.controller.ExamController.startExamInterface(ExamController.java:38) ~[!/:0.0.1-SNAPSHOT]
+	at com.accenture.java.mock.exam.JavaMockExamApplication.run(JavaMockExamApplication.java:27) ~[!/:0.0.1-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:788) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:82) ~[spring-core-6.2.8.jar!/:6.2.8]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.2.8.jar!/:6.2.8]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:86) ~[spring-core-6.2.8.jar!/:6.2.8]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:796) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:787) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:772) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:772) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.3.jar!/:3.5.3]
+	at com.accenture.java.mock.exam.JavaMockExamApplication.main(JavaMockExamApplication.java:16) ~[!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[java-mock-exam-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[java-mock-exam-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[java-mock-exam-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+
