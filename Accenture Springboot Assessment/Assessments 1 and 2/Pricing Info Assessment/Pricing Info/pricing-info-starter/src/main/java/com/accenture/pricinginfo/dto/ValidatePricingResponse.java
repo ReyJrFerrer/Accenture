@@ -1,0 +1,30 @@
+package com.accenture.pricinginfo.dto;
+
+public class ValidatePricingResponse {
+    private boolean isValid;
+
+    public String getNotValidReason() {
+        return notValidReason;
+    }
+
+    public void setNotValidReason(String notValidReason) {
+        this.notValidReason = notValidReason;
+    }
+
+    public boolean isValid() {
+        return isValid;
+    }
+
+    public void setValid(boolean valid) {
+        isValid = valid;
+    }
+
+    private String notValidReason;
+
+    public ValidatePricingResponse(boolean isValid, String notValidReason) {
+        this.isValid = isValid;
+        this.notValidReason = notValidReason;
+    }
+
+
+}

@@ -1,4 +1,5 @@
-package com.accenture.pricinginfo.exception;
+package com.accenture.bankledger.exception;
+
 import java.util.Map;
 public class ApiErrorResponse {
 

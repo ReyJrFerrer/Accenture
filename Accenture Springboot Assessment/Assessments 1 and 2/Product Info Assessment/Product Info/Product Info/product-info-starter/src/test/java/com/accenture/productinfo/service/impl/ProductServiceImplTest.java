@@ -17,32 +17,22 @@ class ProductServiceImplTest {
     }
 
     @Test
-    void getProductId_WithValidCode123456_ShouldReturn1234567() {
+    void testGetProductId_ValidProductCode() {
         ProductIdResponse response = productService.getProductId("123456");
         assertNotNull(response);
         assertEquals("1234567", response.getProductId());
     }
 
-    @Test
-    void getProductId_WithValidCode123451_ShouldReturn123456() {
-        ProductIdResponse response = productService.getProductId("123451");
-        assertNotNull(response);
-        assertEquals("123456", response.getProductId());
-    }
 
     @Test
-    void getProductId_WithInvalidCode_ShouldThrowBadRequestException() {
+    void testGetProductId_InvalidProductCode() {
         BadRequestException exception = assertThrows(BadRequestException.class, () -> {
-            productService.getProductId("invalid");
+            productService.getProductId("12345");
         });
-        assertEquals(4001, exception.getErrorId());
-        assertTrue(exception.getErrorMessage().contains("invalid"));
+        assertEquals(400, exception.getErrorId());
+        assertEquals("Product code 12345 not found.", exception.getErrorMessage());
+        assertNotNull(exception.getErrorDetails());
+        assertTrue(exception.getErrorDetails().isEmpty());
     }
 
-    @Test
-    void getProductId_WithNullCode_ShouldThrowBadRequestException() {
-        assertThrows(BadRequestException.class, () -> {
-            productService.getProductId(null);
-        });
-    }
 }

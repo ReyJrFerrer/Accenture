@@ -5,6 +5,7 @@ import com.accenture.pricinginfo.entity.Pricing;
 import java.util.List;
 
 public class PricingInitializationResponse {
+    private String message;
 
     private List<Pricing> list;
 

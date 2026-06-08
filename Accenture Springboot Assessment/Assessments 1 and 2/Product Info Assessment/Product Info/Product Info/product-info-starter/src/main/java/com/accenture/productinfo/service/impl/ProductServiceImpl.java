@@ -43,7 +43,7 @@ public class ProductServiceImpl implements com.accenture.productinfo.service.Pro
         if(productCode == null){
             log.warning("Product code not found: " + productId);
             throw new BadRequestException(
-                    4001, "Product code " + productId + " not found", null
+                    400, "Product code " + productId + " not found.", new HashMap<>()
             );
         }
         log.info("Product found: " + productId + " -> " + productCode);
