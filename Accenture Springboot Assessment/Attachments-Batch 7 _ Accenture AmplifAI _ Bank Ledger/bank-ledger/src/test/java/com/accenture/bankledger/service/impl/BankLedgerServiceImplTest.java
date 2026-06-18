@@ -161,4 +161,169 @@ public class BankLedgerServiceImplTest {
         assertEquals(400, exception.getErrorId());
         assertEquals("Request body is required.", exception.getErrorMessage());
     }
+
+    @Test
+    void testCreateAccount_WithBlankProductId_ThrowsException() {
+        TermDepositDetails termDepositDetails = new TermDepositDetails(
+                new BigDecimal("0.2"),
+                new BigDecimal("100000.00"),
+                12,
+                "21/02/2023",
+                "21/02/2024"
+        );
+        TermDepositMaturityDetails maturityDetails = new TermDepositMaturityDetails(
+                "John Sina",
+                "123456789"
+        );
+        LedgerOpenAccountRequest request = new LedgerOpenAccountRequest("   ", termDepositDetails, maturityDetails);
+
+        BadRequestException exception = assertThrows(BadRequestException.class,
+                () -> bankLedgerService.createAccount(request));
+
+        assertEquals(400, exception.getErrorId());
+        assertEquals("Validation failed.", exception.getErrorMessage());
+    }
+
+    @Test
+    void testCreateAccount_WithNullTermDepositDetails_ThrowsException() {
+        TermDepositMaturityDetails maturityDetails = new TermDepositMaturityDetails(
+                "John Sina",
+                "123456789"
+        );
+        LedgerOpenAccountRequest request = new LedgerOpenAccountRequest("123456", null, maturityDetails);
+
+        BadRequestException exception = assertThrows(BadRequestException.class,
+                () -> bankLedgerService.createAccount(request));
+
+        assertEquals(400, exception.getErrorId());
+        assertEquals("Validation failed.", exception.getErrorMessage());
+    }
+
+    @Test
+    void testCreateAccount_WithNullDepositAmount_ThrowsException() {
+        TermDepositDetails termDepositDetails = new TermDepositDetails(
+                new BigDecimal("0.2"),
+                null,
+                12,
+                "21/02/2023",
+                "21/02/2024"
+        );
+        TermDepositMaturityDetails maturityDetails = new TermDepositMaturityDetails(
+                "John Sina",
+                "123456789"
+        );
+        LedgerOpenAccountRequest request = new LedgerOpenAccountRequest("123456", termDepositDetails, maturityDetails);
+
+        BadRequestException exception = assertThrows(BadRequestException.class,
+                () -> bankLedgerService.createAccount(request));
+
+        assertEquals(400, exception.getErrorId());
+        assertEquals("Validation failed.", exception.getErrorMessage());
+    }
+
+    @Test
+    void testCreateAccount_WithBlankEffectiveDate_ThrowsException() {
+        TermDepositDetails termDepositDetails = new TermDepositDetails(
+                new BigDecimal("0.2"),
+                new BigDecimal("100000.00"),
+                12,
+                "",
+                "21/02/2024"
+        );
+        TermDepositMaturityDetails maturityDetails = new TermDepositMaturityDetails(
+                "John Sina",
+                "123456789"
+        );
+        LedgerOpenAccountRequest request = new LedgerOpenAccountRequest("123456", termDepositDetails, maturityDetails);
+
+        BadRequestException exception = assertThrows(BadRequestException.class,
+                () -> bankLedgerService.createAccount(request));
+
+        assertEquals(400, exception.getErrorId());
+        assertEquals("Validation failed.", exception.getErrorMessage());
+    }
+
+    @Test
+    void testCreateAccount_WithBlankExpiryDate_ThrowsException() {
+        TermDepositDetails termDepositDetails = new TermDepositDetails(
+                new BigDecimal("0.2"),
+                new BigDecimal("100000.00"),
+                12,
+                "21/02/2023",
+                ""
+        );
+        TermDepositMaturityDetails maturityDetails = new TermDepositMaturityDetails(
+                "John Sina",
+                "123456789"
+        );
+        LedgerOpenAccountRequest request = new LedgerOpenAccountRequest("123456", termDepositDetails, maturityDetails);
+
+        BadRequestException exception = assertThrows(BadRequestException.class,
+                () -> bankLedgerService.createAccount(request));
+
+        assertEquals(400, exception.getErrorId());
+        assertEquals("Validation failed.", exception.getErrorMessage());
+    }
+
+    @Test
+    void testCreateAccount_WithNullMaturityDetails_ThrowsException() {
+        TermDepositDetails termDepositDetails = new TermDepositDetails(
+                new BigDecimal("0.2"),
+                new BigDecimal("100000.00"),
+                12,
+                "21/02/2023",
+                "21/02/2024"
+        );
+        LedgerOpenAccountRequest request = new LedgerOpenAccountRequest("123456", termDepositDetails, null);
+
+        BadRequestException exception = assertThrows(BadRequestException.class,
+                () -> bankLedgerService.createAccount(request));
+
+        assertEquals(400, exception.getErrorId());
+        assertEquals("Validation failed.", exception.getErrorMessage());
+    }
+
+    @Test
+    void testCreateAccount_WithBlankAccountNumber_ThrowsException() {
+        TermDepositDetails termDepositDetails = new TermDepositDetails(
+                new BigDecimal("0.2"),
+                new BigDecimal("100000.00"),
+                12,
+                "21/02/2023",
+                "21/02/2024"
+        );
+        TermDepositMaturityDetails maturityDetails = new TermDepositMaturityDetails(
+                "John Sina",
+                "   "
+        );
+        LedgerOpenAccountRequest request = new LedgerOpenAccountRequest("123456", termDepositDetails, maturityDetails);
+
+        BadRequestException exception = assertThrows(BadRequestException.class,
+                () -> bankLedgerService.createAccount(request));
+
+        assertEquals(400, exception.getErrorId());
+        assertEquals("Validation failed.", exception.getErrorMessage());
+    }
+
+    @Test
+    void testCreateAccount_WithBlankAccountName_ThrowsException() {
+        TermDepositDetails termDepositDetails = new TermDepositDetails(
+                new BigDecimal("0.2"),
+                new BigDecimal("100000.00"),
+                12,
+                "21/02/2023",
+                "21/02/2024"
+        );
+        TermDepositMaturityDetails maturityDetails = new TermDepositMaturityDetails(
+                "",
+                "123456789"
+        );
+        LedgerOpenAccountRequest request = new LedgerOpenAccountRequest("123456", termDepositDetails, maturityDetails);
+
+        BadRequestException exception = assertThrows(BadRequestException.class,
+                () -> bankLedgerService.createAccount(request));
+
+        assertEquals(400, exception.getErrorId());
+        assertEquals("Validation failed.", exception.getErrorMessage());
+    }
 }

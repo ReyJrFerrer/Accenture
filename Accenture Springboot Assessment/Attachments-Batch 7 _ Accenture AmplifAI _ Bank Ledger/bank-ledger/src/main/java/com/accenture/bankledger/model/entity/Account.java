@@ -41,7 +41,8 @@ public class Account {
     }
 
     public Account(String accountNumber, String accountName, String productId,
-                   BigDecimal interestRate, BigDecimal depositAmount, int termMonths,
+                   BigDecimal interestRate, BigDecimal depositAmount,
+                   int termMonths,
                    LocalDate effectiveDate, LocalDate expiryDate) {
         this.accountNumber = accountNumber;
         this.accountName = accountName;

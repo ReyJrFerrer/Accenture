@@ -12,7 +12,8 @@ public class ApiErrorResponse {
     public ApiErrorResponse() {
     }
 
-    public ApiErrorResponse(int errorCode, String errorMessage, Map<String, Object> errorDetails) {
+    public ApiErrorResponse(int errorCode, String errorMessage,
+                            Map<String, Object> errorDetails) {
         this.errorCode = errorCode;
         this.errorMessage = errorMessage;
         this.errorDetails = errorDetails;

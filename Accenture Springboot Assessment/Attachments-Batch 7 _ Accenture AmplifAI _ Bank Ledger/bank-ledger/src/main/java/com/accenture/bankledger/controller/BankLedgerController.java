@@ -19,11 +19,13 @@ public class BankLedgerController {
     }
 
     @PostMapping("/createAccount")
-    public LedgerOpenAccountResponse createAccount(@RequestBody LedgerOpenAccountRequest request){
+    public LedgerOpenAccountResponse createAccount(
+            @RequestBody LedgerOpenAccountRequest request) {
         log.info("Creating account for productId: "+request.getProductId());
 
         bankLedgerService.createAccount(request);
-        return new LedgerOpenAccountResponse(request.getTermDepositMaturityDetails().getAccountNumber());
+        return new LedgerOpenAccountResponse(
+                request.getTermDepositMaturityDetails().getAccountNumber());
 
     }
 }

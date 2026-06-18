@@ -9,7 +9,9 @@ public class TermDepositDetails {
     private String effectiveDate;
     private String expiryDate;
 
-    public TermDepositDetails(BigDecimal interestRate, BigDecimal depositAmount, int termMonths, String effectiveDate, String expiryDate){
+    public TermDepositDetails(BigDecimal interestRate, BigDecimal depositAmount,
+                              int termMonths, String effectiveDate,
+                              String expiryDate) {
         this.interestRate = interestRate;
         this.depositAmount = depositAmount;
         this.termMonths = termMonths;
