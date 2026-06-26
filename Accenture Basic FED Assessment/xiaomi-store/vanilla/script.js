@@ -100,8 +100,8 @@ const cartTotalQuantity = document.getElementById("cart-total-quantity");
 const cartTotalPriceDisplay = document.getElementById("cart-total-price-display");
 
 const heroSlideshowSection = document.getElementById("hero-slideshow-section");
-const categoryFilterBar = document.getElementById("category-filter-bar");
 const productsFlexGrid = document.getElementById("products-flex-grid");
+const wearablesFlexGrid = document.getElementById("wearables-flex-grid");
 const brandLogo = document.getElementById("brand-logo");
 
 const alertOverlay = document.getElementById("alert-overlay");
@@ -115,7 +115,6 @@ const detailAddToCartBtn = document.getElementById("detail-add-to-cart-btn");
 const detailColorOptions = document.getElementById("detail-color-options");
 
 function init() {
-  renderCategories();
   renderProducts();
   initSlideshow();
   setupEventListeners();
@@ -138,9 +137,7 @@ function setupEventListeners() {
   cartCheckoutBtn.addEventListener("click", handleCheckout);
 
   brandLogo.addEventListener("click", () => {
-    selectedCategory = "All";
-    renderCategories();
-    renderProducts();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   // Modals close on overlay click
@@ -175,34 +172,27 @@ function formatPrice(price) {
   return price.toLocaleString("en-US", { minimumFractionDigits: 2 });
 }
 
-// Category filter
-function getCategories() {
-  const cats = new Set(productsData.map(p => p.category));
-  return ["All", ...Array.from(cats)];
-}
-
-function renderCategories() {
-  const categories = getCategories();
-  categoryFilterBar.innerHTML = "";
-  categories.forEach(cat => {
-    const btn = document.createElement("button");
-    btn.className = `filter-tab ${selectedCategory === cat ? "active" : ""}`;
-    btn.textContent = cat;
-    btn.addEventListener("click", () => {
-      selectedCategory = cat;
-      renderCategories();
-      renderProducts();
-    });
-    categoryFilterBar.appendChild(btn);
-  });
-}
-
 // Products Grid
 function renderProducts() {
-  productsFlexGrid.innerHTML = "";
-  const filtered = selectedCategory === "All" ? productsData : productsData.filter(p => p.category === selectedCategory);
+  if (productsFlexGrid) {
+    productsFlexGrid.innerHTML = "";
+    const smartphones = productsData.filter(p => p.category === "Smartphones");
+    renderProductCards(smartphones, productsFlexGrid);
+  }
   
-  filtered.forEach(product => {
+  if (wearablesFlexGrid) {
+    wearablesFlexGrid.innerHTML = "";
+    const wearables = productsData.filter(p => p.category === "Wearables");
+    renderProductCards(wearables, wearablesFlexGrid);
+  }
+
+  if(window.lucide) {
+    lucide.createIcons();
+  }
+}
+
+function renderProductCards(products, container) {
+  products.forEach(product => {
     let selectedColor = product.colors[0];
 
     const card = document.createElement("div");
@@ -300,12 +290,8 @@ function renderProducts() {
     details.appendChild(footer);
     card.appendChild(details);
 
-    productsFlexGrid.appendChild(card);
+    container.appendChild(card);
   });
-  
-  if(window.lucide) {
-    lucide.createIcons();
-  }
 }
 
 // Cart functionality
