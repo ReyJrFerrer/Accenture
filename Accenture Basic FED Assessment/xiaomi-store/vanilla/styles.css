@@ -1,5 +1,5 @@
 :root {
-  --color-main-bg: #FDFCFB;
+  --color-main-bg: #fff7f0;
   --color-secondary-bg: #F5F3EF;
   --color-dark: #1A1A1A;
   --color-dark-muted: rgba(26, 26, 26, 0.7);
@@ -730,6 +730,7 @@ main {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  background-color: rgba(32, 32, 32, 0.95);
 }
 
 /* Modals Overlay */
@@ -755,7 +756,8 @@ main {
   flex-direction: column;
   box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
   border: 1px solid var(--border-medium);
-  
+  border-radius: 10px;
+  overflow: hidden;
   
 }
 @media (min-width: 768px) { #product-detail-modal { flex-direction: row; } }
